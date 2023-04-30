@@ -1,0 +1,151 @@
+:root {
+  --bg-func-keys: #1f3e4b;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.root {
+  /* margin: 0 auto; */
+  padding: 10px;
+  /* width: 816px; */
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* gap: 5px 5px; */
+}
+
+.key-box {
+  margin: 0 auto;
+  /* padding: 10px; */
+  width: 816px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 5px;
+}
+
+.text-area {
+  width: 810px;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  resize: none;
+  color: white;
+  background-color: #1f3e4b;
+}
+
+.capslock-indicator {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.key {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-color: #305f72;
+  color: #fff;
+}
+
+.key:hover {
+  opacity: 0.85;
+}
+
+.backquote {
+  background-color: var(--bg-func-keys);
+}
+
+.backspace {
+  width: 100px;
+  background-color: var(--bg-func-keys);
+}
+
+.delete {
+  background-color: var(--bg-func-keys);
+}
+
+.tab {
+  width: 70px;
+  background-color: var(--bg-func-keys);
+}
+
+.keyq,
+.keyw,
+.keye,
+.keyr,
+.keyt {
+  width: 45px;
+}
+
+.capslock {
+  width: 80px;
+  text-align: center;
+  background-color: var(--bg-func-keys);
+}
+
+.enter {
+  width: 125px;
+  background-color: var(--bg-func-keys);
+}
+
+.shiftleft {
+  width: 100px;
+  background-color: var(--bg-func-keys);
+}
+
+.shiftright {
+  width: 105px;
+  background-color: var(--bg-func-keys);
+}
+
+.space {
+  width: 335px;
+}
+
+.controlleft {
+  width: 70px;
+  background-color: var(--bg-func-keys);
+}
+
+.controlright {
+  background-color: var(--bg-func-keys);
+}
+
+.metaleft {
+  width: 70px;
+  background-color: var(--bg-func-keys);
+}
+
+.altleft {
+  background-color: var(--bg-func-keys);
+}
+
+.altright {
+  background-color: var(--bg-func-keys);
+}
+
+.arrowup,
+.arrowdown,
+.arrowleft,
+.arrowright {
+  background-color: var(--bg-func-keys);
+}
+
+.active {
+  background-color: #b65b1e;
+}
+
+.active-caps {
+  background-color: #6db831;
+}
