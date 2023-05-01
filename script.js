@@ -899,6 +899,7 @@ const keysRu = [
   },
 ];
 
+let language = false;
 let initialLanguage = keysEng;
 let capslock = false;
 
@@ -920,6 +921,8 @@ root.append(capsLockIndicator, textArea, keyBox);
 document.body.append(root);
 
 function render() {
+  const lang = JSON.parse(localStorage.getItem("lang"));
+  console.log(lang ? "ru" : "eng");
   initialLanguage.forEach((keys) => {
     for (const [button, buttonValue] of Object.entries(keys)) {
       const divKey = document.createElement("div");
@@ -976,7 +979,27 @@ function addTextInTextarea() {
     } else if (event.code === "ControlLeft") {
       return;
     } else {
-      textArea.value += event.key;
+      if (language) {
+        if (capslock) {
+          keysRu.map((obj) => {
+            for (const [key, objValue] of Object.entries(obj)) {
+              if (key === event.code) {
+                textArea.value += objValue.altValue;
+              }
+            }
+          });
+        } else {
+          keysRu.map((obj) => {
+            for (const [key, objValue] of Object.entries(obj)) {
+              if (key === event.code) {
+                textArea.value += objValue.value;
+              }
+            }
+          });
+        }
+      } else {
+        textArea.value += event.key;
+      }
     }
   });
 
@@ -1044,9 +1067,10 @@ function switchLanguage() {
       (event.code === "ControlLeft" && event.altKey === true) ||
       (event.code === "AltLeft" && event.ctrlKey === true)
     ) {
-      capslock = !capslock;
-      initialLanguage = capslock ? keysRu : keysEng;
+      language = !language;
+      initialLanguage = language ? keysRu : keysEng;
       keyBox.innerHTML = "";
+      localStorage.setItem("lang", language);
       render();
     }
   });
