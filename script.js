@@ -923,7 +923,7 @@ document.body.append(root);
 function render() {
   const lang = JSON.parse(localStorage.getItem("lang"));
   console.log(lang ? "ru" : "eng");
-  initialLanguage.forEach((keys) => {
+  (lang ? keysRu : initialLanguage).forEach((keys) => {
     for (const [button, buttonValue] of Object.entries(keys)) {
       const divKey = document.createElement("div");
       divKey.classList.add(button.toLowerCase(), "key");
