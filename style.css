@@ -16,7 +16,7 @@ body {
 }
 
 .key-box {
-  margin: 0 auto;
+  margin: 0 auto 15px;
   width: 816px;
   display: flex;
   flex-wrap: wrap;
@@ -38,6 +38,11 @@ body {
   border: 1px solid black;
   border-radius: 50%;
   margin: 10px;
+}
+
+.capslock-box {
+  display: flex;
+  align-items: center;
 }
 
 .key {
